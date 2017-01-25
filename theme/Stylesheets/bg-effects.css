@@ -1,10 +1,17 @@
 /* Options for the ImageWidget that is spawned every now and then. */
 
+ImageWidget { 
+	position: absolute;
+	bottom: 50px !important;;
+	right: 50px !important;
+}
+
 ImageWidget.ImageAttractor {
-    source: "Images/Hursley/ETS_transparent.png";
+    source: "Images/Hursley/IBM_logo_black.png";
     background: transparent;
     color: white;
-    scale: 0.8;
+    scale: 1;
+    position: absolute;
 }
 
 .Light ImageWidget.ImageAttractor {
@@ -16,7 +23,7 @@ ImageWidget.ImageAttractor {
 
 ImageAttractorOperator {
     /* How long (in seconds) the image will stay on the screen */
-    time: 12s;
+    time: 10s;
     /* How often (in seconds) new text will be spawned */
     interval: 9s;
     /* How long in relative time it takes to reach scale given in animation-scale */

@@ -167,8 +167,8 @@ CESAsymmetricContentSphere {
 
 /* Size of the menu item for root */
 CESAsymmetricGraphVisualizer#root {
-  width: 180;
-  height: 180;
+  width: 250;
+  height: 250;
 }
 
 /* Image that will be spinned around menu item when it gets focus. */

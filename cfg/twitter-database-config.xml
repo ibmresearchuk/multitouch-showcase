@@ -4,5 +4,5 @@
 -->
 <DB>
   <type>QSQLITE</type>
-  <databasename>/home/multi/Applications/ExperienceWithCollaboration2/twitter.db</databasename>
+  <databasename>/home/multi/showcase-dbs/twitter/twitter.db</databasename>
 </DB>

@@ -39,3 +39,9 @@
 
 /* DVICaptureWidget settings */
 @import 'Stylesheets/dvi-capture.css';
+
+#MainLayer { 
+	background-image : url('Images/Hursley/Backgrounds/hursley-snow-Darren-shaw.jpg');
+	height: 100% !important;
+	position: relative;
+}

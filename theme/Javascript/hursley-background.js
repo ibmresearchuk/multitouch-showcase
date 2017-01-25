@@ -1,1 +1,1 @@
-$("#MainLayer")[0].css("background-image", "url('Images/Hursley/Backgrounds/hursley-snow-Darren-shaw.jpg')");
+//$("#MainLayer").style("background-image", "url('Images/Hursley/Backgrounds/hursley-snow-Darren-shaw.jpg')");
