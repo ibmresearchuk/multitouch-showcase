@@ -15,13 +15,13 @@ At the top level there must be three folders :
 3. Theme
    Theme (looks) of the application
    
-### Configuration
+### 1. Configuration
 
 
 
 
 
-### Content
+### 2. Content
 
 ##### Images
 
@@ -39,6 +39,6 @@ At the top level there must be three folders :
 
 #### Menus 
 
-### Theme
+### 3. Theme
 
 
