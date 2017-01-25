@@ -36,7 +36,7 @@ Experience has another way to show a collection of images. This is called an "it
 
 Experience supports all plugins that are included in Cornerstone 2. The mechanism for loading these is the serialization and deserialization framework of Cornerstone 2. One can also add their own widgets by placing their serializations into the content folder. In practice this is achieved by creating an XML file describing the content to be opened. This section introduces some plugins that are commonly used in Experience. Note that all of these require manual specification of a menu icon.
 
-####  - Twitter
+####=  - Twitter
 
 Cornerstone 2 comes with a Twitter plugin that is specifically designed for Experience. To be able to use this, one needs to first configure access to Twitter. After this is done, it is enough to create a correspongind XML file under one of the content directories. The example below shows a definition of a TweetCloud item that searches Tweets with the keyword multitaction. Adding the multitaction.xml file described below and assigning it an icon will make it visible in the Experience menu:
 
@@ -50,7 +50,7 @@ Cornerstone 2 comes with a Twitter plugin that is specifically designed for Expe
 </Styleable>
 ```
 
-####  - Web Browser
+####=  - Web Browser
 
 The web browser is a generic component included in Cornerstone 2. It can be added to your Experience menu in the same way as the other plugins. The following XML file creates a web browser with YouTube as a starting page:
 
