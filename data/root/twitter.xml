@@ -1,7 +1,7 @@
 <!DOCTYPE mtdoc>
 <Styleable type="experience.TweetCloud">
-  <queries>
-    <string>multitaction</string>
-    <string>@multitouchfi</string>
-  </queries>
+    <queries>
+        <string>ETS Twitter</string>
+        <string>@ibmets</string>
+    </queries>
 </Styleable>
