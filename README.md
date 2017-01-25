@@ -25,6 +25,9 @@ At the top level there must be three folders :
 
 ##### Images
 
+Images are the most simple type of content supported by Experience. It is enough to place them in the content directory and they will be added automatically to the menu. Most common formats such as JPEG, PNG or TGA are supported. Menu icons will be automatically generated from images. Icons can be customized by setting the icon manually
+
+
 ##### Videos
 
 #### Sub-menus
