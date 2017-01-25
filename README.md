@@ -8,10 +8,10 @@ https://cornerstone.multitouch.fi/sites/default/files/generated-content/applicat
 
 At the top level there must be three folders : 
 
-1. [Configuration](Configuration/README.md)
+1. [Configuration](cfg/README.md)
     - Definitions of databases and email sending functionality.
-2. [Content](Content/README.md)
+2. [Content](data/README.md)
     - Content displayed by the application (e.g. Images, Videos, Widgets, etc.)
-3. [Theme](Content/README.md)
+3. [Theme](theme/README.md)
     - Theme (looks) of the application
    
