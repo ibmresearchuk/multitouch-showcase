@@ -23,9 +23,9 @@ At the top level there must be three folders :
 
 ### Content
 
-#### Images
+##### Images
 
-#### Videos
+##### Videos
 
 #### Sub-menus
 
