@@ -1,0 +1,79 @@
+CESAsymmetricContentSender {
+  /* Greeting that will be placed on top of the hotspot. USER is replaced
+     with the name attached to marker. */
+  greeting: "Hello USER!";
+  background-color: transparent;
+}
+
+/* Settings for TextWidget that shows greeting above */
+CESAsymmetricContentSender > .Greeting {
+  location: 0 5%;
+  size: 100% 10%;
+  text-align: center;
+  background-color: transparent;
+  font-size: 16px;
+  glow: 0.2;
+  glow-color: #fff7;
+}
+
+/* Settings for TextWidget that shows instructions in hotspot */
+CESAsymmetricContentSender > .Instructions {
+  location: 0 20%;
+  size: 100% 5%;
+  text-align: center;
+  glow: 0.2;
+  glow-color: #fff7;
+  text: "Drag content on the area below to send it to:";
+  font-size: 9px;
+  background-color: transparent;
+}
+
+/* Settings for TextWidget that shows email of the user in hotspot */
+CESAsymmetricContentSender > .Email {
+  size: 100% 28%;
+  text-align: center;
+  glow: 0.2;
+  font-size: 12px;
+  glow-color: #fff7;
+  location: 0 15%;
+  background-color: transparent;
+}
+
+/* Settings of area that holds the content dragged to hotspot */
+CESAsymmetricContentSender > .SendArea {
+  background-color: #0004;
+  location: 0 35%;
+  size: 100% 50%;
+}
+
+/* Settings for the button used to send email */
+CESAsymmetricContentSender > .SendMail {
+  /* Color of the button when it is not pressed down */
+  passive-color: transparent;
+  /* Color of the button when it is pressed down */
+  active-color: #13b5ea;
+  /* How long button needs to be pressed down in order to send email */
+  delay: 0.5;
+  size: 15%;
+  origin: 50% 0;
+  location: 50% 85%;
+}
+
+/* Icon of the send mail button */
+CESAsymmetricContentSender > .SendMail .Icon {
+  source: "Images/mail-icon.png";
+  size: 100% 100%;
+}
+
+/* Settings for TextWidget that can (for example) show instructions for
+   email sending. */
+CESAsymmetricContentSender > .SendMailLabel {
+  location: 5% 88%;
+  size: 100% 10%;
+  text-align: vcenter;
+  background-color: transparent;
+  glow: 0.2;
+  glow-color: #fff7;
+  text: "Press and hold to send:";
+  font-size: 7px;
+}

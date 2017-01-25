@@ -1,0 +1,18 @@
+/* Interaction sound settings */
+PositionalSoundOperator {
+  /* Sound volume when touched with fingers */
+  finger-volume: 0.5;
+  /* Sound volume when touched with pens */
+  pen-volume: 0.5;
+  /* Sound volume when touched with markers */
+  marker-volume: 0.5;
+  /* Sounds played when touched with fingers (can have multiple
+     strings separated by white spaces)*/
+  finger-sounds: "Sounds/fx-new-content-1.wav";
+  /* Sounds played when touched with pens (can have multiple
+     strings separated by white spaces)*/
+  marker-sounds: "Sounds/fx-new-content-2.wav";
+  /* Sounds played when touched with markers (can have multiple
+     strings separated by white spaces)*/
+  pen-sounds: "Sounds/fx-new-content-3.wav";
+}

@@ -1,0 +1,102 @@
+/** Alternative color-scheme fitted for light background. 
+ *  See documentation of attributes from other stylesheets.
+ */
+
+
+.Light CESAsymmetricGraphVisualizer {
+  connector-color: black;
+  color: black;
+}
+
+.Light CESAsymmetricContentSphere {
+  inner-border-color: black;
+  outer-border-color: white;
+  shadow-color: black;
+  shadow-strength: 0.2;
+}
+
+.Light .FocusSpinner {
+  color: black;
+}
+
+.Light .NodeText {
+  color: #ffff;
+  stroke: #000f;
+  stroke-width: 10;
+}
+
+.Light CESAsymmetricGlowContainer {
+  color: white;
+}
+
+.Light CESAsymmetricGlowContainer.enriched {
+  color: black;
+}
+
+.Light CESAsymmetricGlowContainer > .label {
+  color: black;
+}
+
+.Light .glow_BookWidget,
+.Light .glow_BookWidget.enriched,
+.Light .glow_ItemFlowWidget,
+.Light .glow_ItemFlowWidget.enriched {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.Light .TouchMe {
+  color: black;
+}
+
+.Light .TouchMeClone {
+  color: black;
+}
+
+.Light Toolbar {
+  background-color: #00000077;
+}
+
+.Light TextWidget.TextAttractor {
+  glow-color: black;
+  stroke-width: 7;
+  stroke: black;
+}
+
+.Light GestureAnimationWidget {
+  color: rgba(15, 126, 175, 1);
+}
+
+#LightBackgroundShaderEffect {
+  speed: 0.2;
+  clear-framebuffer: false;
+  framebuffer-scale: 1 1;
+  shader: "Shaders/effect_plasma.fs";
+  depth: -5;
+  input-flags: input-none;
+}
+
+#LightBackgroundChampagne {
+  background-color: transparent;
+  color: black;
+  bubble-size: 6.0;
+  bubble-size-spread: 0.5;
+  bubble-momentum: 0.7;
+  bubbles-per-emitter: 5;
+  bubble-acceleration: -0.1;
+  bubble-sway: 0.02;
+  emitter-count: 30;
+  emitter-age: 40;
+  bubbles-per-finger: 1;
+  depth: -4;
+}
+
+.Light .ContentSenderGlow {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.Light CESAsymmetricContentSender > TextWidget {
+  color: white;
+  glow-color: black;
+  stroke-width: 4;
+  stroke: black;
+}

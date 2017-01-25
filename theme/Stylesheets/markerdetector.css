@@ -1,0 +1,36 @@
+/* This controls the widget that reacts when marker is placed on top of screen. */
+CESAsymmetricMarkerDetector {
+  /* How long guestbook entries stay on screen. */
+  content-timeout: 60.0;
+  /* Use this to enable/disable enriched markers */
+  use-enriched-markers: true;
+  /* When true, on detection of an unregistered marker a register dialog
+  pops up and asks for name and email */
+  allow-marker-registration: true;
+  /* Need to ignore the eraser markers when doing self registration */
+  ignored-markers: "2318" "2187" "2151" "2149" "2148" "2147" "2146" "2145" "2144" "2143" "2142" "2103" "632" "614" "608";
+  /* Image that is used in guestbook when there does not exist
+     image corresponding to guestbook-entry code in folder defined
+     by guestbook-db-config.xml. */
+  guest-placeholder-image: "Images/anon.jpg";
+  /* Root folder for personal menus that are spawned using markers. */
+  personal-menus-dir: "personal-menus/";
+}
+
+/* Settings for TextWidget that is displayed on bottom of the guestbook-entries */
+CESAsymmetricUserInfo > .UserText {
+  background-color: #13b5eacc;
+  glow: 0.2;
+  glow-color: #fff7;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+
+  width: 100% !important;
+  height: 90px !important;
+}
+
+/* Color that modulates background of containers that are spawned with markers */
+CESAsymmetricMarkerDetector > CESAsymmetricGlowContainer {
+  color: rgba(0,0,0,0.2);
+}

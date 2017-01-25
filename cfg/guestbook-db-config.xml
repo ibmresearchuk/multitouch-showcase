@@ -1,0 +1,14 @@
+<!--
+    This file contains the settings for the database that holds
+    information about guests. The database should have table
+    called 'users' that has fields user_group(varchar), first_name(varchar),
+    last_name(varchar), company(varchar), id(int) and title(varchar).
+    The id is the integer that is tied to the guest's marker.
+-->
+<DB>
+  <type>QSQLITE</type>
+  <!-- Acts as a path to database when using sqlite. This database is
+  read-only, so it can reside under 'data' -->
+  <databasename>data/guestbook.db</databasename>
+  <photo-path>staff-photos</photo-path>
+</DB>

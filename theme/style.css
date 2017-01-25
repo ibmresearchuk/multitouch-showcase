@@ -1,0 +1,41 @@
+/* Menu system */
+@import 'Stylesheets/menusystem.css';
+
+/* Teasers that float around */
+@import 'Stylesheets/teasers.css';
+
+/* Drawing and toolbars */
+@import 'Stylesheets/annotation.css';
+
+/* Background-effects */
+@import 'Stylesheets/bg-effects.css';
+
+/* Settings for various widgets */
+@import 'Stylesheets/widgets.css';
+
+/* Settings for MultiTaction-model */
+@import 'Stylesheets/tactionmodel.css';
+
+/* Settings for MarkerDetector */
+@import 'Stylesheets/markerdetector.css';
+
+/* Settings for the marker registration dialog */
+@import 'Stylesheets/register_marker.css';
+
+/* Settings for hotspot that sends emails */
+@import 'Stylesheets/contentsender.css';
+
+/* Settings for sounds that are played when screen is touched */
+@import 'Stylesheets/sounds.css';
+
+/* Settings for Tweet cloud. */
+@import 'Stylesheets/twitter.css';
+
+/* Alternative color-scheme fitted for light background */
+@import 'Stylesheets/light.css';
+
+/* MapWidget settings */
+@import 'Stylesheets/map.css';
+
+/* DVICaptureWidget settings */
+@import 'Stylesheets/dvi-capture.css';

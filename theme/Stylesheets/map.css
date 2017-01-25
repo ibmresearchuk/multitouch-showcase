@@ -1,0 +1,77 @@
+MapContainerWidget {
+  input-flags: pass-to-children;
+  min-width-for-extra-layer-control: 1920;
+  max-layer-control-pixel-width: 100;
+  size: 900 500;
+}
+
+MapContainerWidget MapWidget {
+  backend: "osm";
+  map-type: 0;
+
+  longitude-range: -165 -45;
+  latitude-range: 15 60;
+  zoom-range: 2 18;
+  zoom: 4;
+  starting-position: 36 -95;
+  map-velocity-damping: 0.9;
+
+  size: 100% 100%;
+  flags: lock-depth;
+  depth: 0;
+}
+
+MapContainerWidget LayerSelectionWidget {
+  layer-count: 3;
+  width: 160;
+  height: 450;
+  background-color: #000000cc;
+  input-flags: pass-to-children;
+  empty-space: 0.23 0.23;
+}
+
+LayerSelectionWidget .layer0 {
+  source: "Images/map-icon-standard.png";
+}
+
+LayerSelectionWidget .layer0:active {
+  source: "Images/map-icon-standard-active.png";
+}
+
+LayerSelectionWidget .layer1 {
+  source: "Images/map-icon-car.png";
+}
+
+LayerSelectionWidget .layer1:active {
+  source: "Images/map-icon-car-active.png";
+}
+
+LayerSelectionWidget .layer2 {
+  source: "Images/map-icon-dude.png";
+}
+
+LayerSelectionWidget .layer2:active {
+  source: "Images/map-icon-dude-active.png";
+}
+
+LayerButton {
+  background-color: transparent;
+  padding: 10px;
+  input-flags: single-taps;
+}
+
+LayerButton.selected {
+  background-color: #34b4e4;
+}
+
+MapContainerWidget #left-layers {
+  location: 0% 75%;
+  origin: 0 0.5;
+  depth: 10;
+}
+
+MapContainerWidget #right-layers {
+  location: 100% 75%;
+  origin: 1 0.5;
+  depth: 10;
+}

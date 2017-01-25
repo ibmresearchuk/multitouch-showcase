@@ -1,0 +1,213 @@
+/* This is the widget that captures all the drawings. It is placed on top
+   of images and videos. */
+AnnotationWidget {
+  /* Size of the eraser markers */
+  eraser-size: 70px 45px;
+  /* Codes of the eraser markers */
+  eraser-code: "2318" "2187" "2151" "2149" "2148" "2147" "2146" "2145" "2144" "2143" "2142" "2103" "632" "614" "608";
+  /* How long it takes to hide toolbar from inactive widget */
+  toolbar-hide-timeout: 10.0s;
+  /* Are drawings rendered */
+  render-splines: true;
+  /* If enabled, the color of drawing is random */
+  random-colors: false;
+  /* If enabled, erasing on top of video erases the past of the drawing as well */
+  permanent-erase: false;
+  /* If enabled, the drawing fill fade by itself */
+  enable-drawing-fade: false;
+  /* This controls the size of the images that will be sent by email */
+  snapshot-scale-factor: 0.6;
+}
+
+/* Annotation widget that is placed to background layer */
+AnnotationWidget.AnnotationBackground {
+  enable-drawing-fade: true;
+  drawing-fade-timeout: 120.0;
+
+  random-colors: true;
+  permanent-erase: true;
+  border-width: 0;
+}
+
+/* Is widget opened in locked or unlocked state */
+AnnotationWidget, ToolbarOwner {
+  initial-lock-state: false;
+}
+
+/* This will control toolbar behaviour of the widgets that are not drawable */
+ToolbarOwner {
+  /* How long widget must remain inactive for toolbar to be hidden */
+  toolbar-hide-timeout: 99999999;
+}
+
+/*** Global options (icons and colors) for the toolbar and its buttons ***/
+Toolbar {
+  background-color: #00000033;
+}
+
+/* Settings for close- and lock-buttons */
+Toolbar > Button.Close, ToggleButton.Lock {
+  background-color: transparent;
+}
+
+/* Settings for the close button icon */
+Toolbar > Button.Close .Icon {
+  source: "Images/close-button.png";
+  size: 100% 100%;
+}
+
+/* Close button look when pressed down */
+Toolbar > Button.Close:active {
+  background-color: #13b5eacc !important;
+}
+
+/* Lock-button's icon settings */
+Toolbar > ToggleButton.Lock .Icon {
+  source: "Images/lock.png";
+  size: 100% 100%;
+}
+
+/* Lock-button settings when lock is toggled on */
+Toolbar >  ToggleButton.Lock:enabled {
+  background-color: #13b5eacc !important;
+}
+
+/* Lock-button's icon settings, when lock is toggled on */
+Toolbar >  ToggleButton.Lock:enabled .Icon {
+  source: "Images/lock.png";
+}
+
+
+/**** Layout options for the toolbar that is attached to non-drawable content ****/
+
+/* Size of the toolbar (defines aspect ratio). */
+ToolbarOwner > Toolbar {
+  width: 80px;
+  height: 220px;
+}
+
+/* Close button location and size */
+ToolbarOwner > Toolbar > Button.Close {
+  location: 5% 2.5%;
+  size: 90% 30%;
+}
+
+/* Options of ImageWidget that is used as close button in toolbar */
+ToolbarOwner > Toolbar > Button.Close .Icon {
+  location: 0;
+  size: 100%;
+}
+
+/* Lock button location and size */
+ToolbarOwner > Toolbar > ToggleButton.Lock {
+  location: 5% 35%;
+  size: 90% 30%;
+}
+
+/* Options of ImageWidget that is used as close button in toolbar */
+ToolbarOwner > Toolbar > ToggleButton.Lock .Icon {
+  location: 0;
+  size: 100%;
+}
+
+
+/**** Options for the toolbar that is attached to drawable content ****/
+
+/* Size (aspect ration) of toolbar */
+.DrawableWidget > Toolbar {
+  width: 110px;
+  height: 625px;
+}
+
+/* Hue selector position */
+.DrawableWidget > Toolbar > HueSelector {
+  location: 5% 17%;
+  size: 90% 15%;
+}
+
+/* Saturation selector position */
+.DrawableWidget > Toolbar > SaturationValueSelector {
+  location: 5% 33%;
+  size: 90% 15%;
+}
+
+/* Settings of clear button */
+.DrawableWidget > Toolbar > SlowButton.Clear {
+  /* Color shown when button is unused */
+  passive-color: transparent;
+  /* Color shown when button is active */
+  active-color: #13b5eacc;
+  /* How many seconds button needs to be pressed down to trigger action */
+  delay: 0.5;
+  /* Location of the button */
+  location: 5% 49%;
+  size: 90% 15%;
+}
+
+/* Settings for clear-icon */
+.DrawableWidget > Toolbar > SlowButton.Clear .Icon {
+  source: "Images/trash.png";
+  origin: 0.5 0;
+  location: 50% 0;
+  size: 60% 100%;
+}
+
+/* Undo button settings */
+.DrawableWidget > Toolbar > DragButton.Undo {
+  background-color: transparent;
+  location: 5% 65%;
+  size: 90% 15%;
+}
+ToolbarOwner.DrawableWidget > Toolbar > DragButton.Undo {
+  display: none;
+}
+
+/* Active color of undo-button*/
+.DrawableWidget > Toolbar > DragButton.Undo:active {
+  background-color: #13b5eacc;
+}
+
+/* Settings for undo-icon */
+.DrawableWidget > Toolbar > DragButton.Undo .Icon {
+  source: "Images/undo.png";
+  origin: 0.5 0.5;
+  location: 50% 50%;
+  size: 90% 60%;
+}
+
+/* Settings of close-button */
+.DrawableWidget > Toolbar > Button.Close {
+  location: 5% 1%;
+  size: 90% 15%;
+  background-color: transparent;
+}
+
+/* Close button's icon's position*/
+.DrawableWidget > Toolbar > Button.Close .Icon {
+  size: 100%;
+}
+
+/* Lock-button settings */
+.DrawableWidget > Toolbar > ToggleButton.Lock {
+  location: 5% 81%;
+  size: 90% 15%;
+  background-color: transparent;
+}
+ToolbarOwner.DrawableWidget > Toolbar > ToggleButton.Lock {
+  location: 5% 65%;
+}
+
+/* Lock-button's icon's position*/
+.DrawableWidget > Toolbar > ToggleButton.Lock .Icon {
+  size: 100%;
+}
+
+Toolbar > .snapshot-button {
+  location: 5% 65%;
+  size: 72px 72px;
+  source: "Images/snapshot-icon.png";
+}
+
+Toolbar > .snapshot-button:active {
+  background-color: #13b5eacc;
+}

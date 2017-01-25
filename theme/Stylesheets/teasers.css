@@ -1,0 +1,63 @@
+/* Options for the image widgets floating in the scene */
+.TouchMe {
+  source: "Images/touchme-logo.png";
+  minimum-solid-alpha: 0;
+  background-color: transparent;
+  color: white;
+  input-scale: false;
+  input-rotation: false;
+}
+
+/* Options for the image widgets that are spawned when touched
+   the floating image widget. */
+.TouchMeClone {
+  source: "Images/touchme-logo.png";
+  background-color: transparent;
+  color: white;
+  input-scale: false;
+  input-rotation: false;
+}
+
+/* Options controlling the movement of "TouchMe"-widget. The movement
+   goes along sine wave that is controlled by these parameters. */
+.TouchMe > CESAsymmetricWaveMovement {
+  /* How long it takes to continue movement after widget has been touched.*/
+  timeout: 2.0;
+  /* Speed of the movement. */
+  speed: 100.0;
+  /* Height of the base level of sine-wave. */
+  base-y: 400.0;
+  /* Amplitude of sine */
+  amplitude: 200.0;
+  /* Oscillation of sine */
+  oscillation-time: 20.0;
+}
+
+/* What happens when TouchMe-widget is touched. */
+CESAsymmetricTouchMeOperator {
+  /* How many clones are created */
+  clone-count: 5;
+  /* How zig-zaggy the movement of clones is. Bigger means more zig-zaggy */
+  point-count: 3;
+  /* How long the effect will continue */
+  duration: 2.0;
+}
+
+/* This controls the movement and pulsing of teaser menu items.
+   Perpendicular wave movement is a combination of three sine waves. */
+WaveMovement2 {
+  /* Which direction menu item is moving? (up) */
+  forward: 0 -40;
+  /* Which direction the wave movement is conducted */
+  perpendicular: 50 0;
+  /* How many seconds the object will stay in place after interaction */
+  timeout: 3s;
+  /* Frequencies of sine waves that control the wave movement */
+  freq: 0.1 0.04 0.215;
+  /* How fast the scale animation loops */
+  scale-freq: 1.0;
+  /* The amplitude of scale animation */
+  scale-amplitude: 5.0;
+  /* How much randomness is applied to the given parameters */
+  randomness: 25%;
+}

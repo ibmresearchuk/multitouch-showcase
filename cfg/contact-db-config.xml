@@ -1,0 +1,7 @@
+<DB>
+  <type>QMYSQL</type>
+  <databasename>enriched_markers</databasename>
+  <username>multi</username>
+  <password>multi</password>
+  <hostname>localhost</hostname>
+</DB>

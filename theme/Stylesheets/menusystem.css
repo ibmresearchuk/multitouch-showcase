@@ -1,0 +1,243 @@
+/* This set of paramaters controls how the spring physics and menu
+   bubbles behave. */
+CESAsymmetricMainWidget {
+  /* Velocities calculated during physics simulations are multiplied with this.
+     Meaningful values are close to 1 (0.8 - 1.07). */
+  node-damping: 1.0;
+  /* Maximum force applied to menu items during physics simulations. */
+  max-force: 10000.0;
+  /* How tense springs between menu items are. */
+  spring-constant: 50.0;
+  /* If two menu item's are inside this range they will repulse each other. */
+  range: 100.0;
+  /* How strongly menu items will repulse each other. */
+  repulse-constant: 1000.0;
+
+  /* How long the springs are at rest. If set to 0, the length
+     is calculated based on the depth of hierarchy. */
+  rest-length: 0;
+
+  /* These will control random movement of nodes */
+  x-frequency: 0.3;
+  y-frequency: 1.6;
+}
+
+/* This controls the style and the behaviour of the menu bubbles */
+CESAsymmetricGraphVisualizer {
+  /* Determines how far away menu is expanded when menu bubble is touched 
+     (in steps of menu hierarchy) */
+  vis-distance: 1;
+
+  /* Image behind menu bubble */
+  image: "Images/glow.png";
+
+  /* Apply spherical distortion to bubble icon? */
+  spherical-effect: true;
+
+  /* How many seconds bubble stays if it is never touched. */
+  initial-timeout: 15.0;
+
+  /* How many seconds bubble stays after it has been interacted with */
+  timeout: 30.0;
+
+  /* How far away spawned neighbours are placed from the bubble (in pixels) */
+  spawn-distance: 150.0;
+
+  /* Size of the normal menu bubble */
+  width: 143;
+  height: 143;
+
+  /* How many seconds content must stay idle until it's removed. */
+  content-timeout: 60.0;
+
+  /* The width of the connector between menu bubbles */
+  connector-width: 30.0;
+  
+  /* Image used when drawing the connectors */
+  connector-image: "Images/line.png";
+
+  /* The color for the connector strip */
+  connector-color: white;
+
+  /* Are the menu bubbles rotated towards the hands of users */
+  rotate-towards-hands: false;
+
+  /* Are unused menu items blurred */
+  blur-enabled: true;
+  
+  /* How long does it take to inactive menu bubbles to be blurred */
+  blur-timeout: 15s;
+
+  /* The following two values will be used in the layout algorithm of
+     the menu items, if CESAsymmetricMainWidget's "rest-length" is 0. 
+     
+     The algorithm calculates the rest lengths of the menu's springs.
+     It places menu items on the circle so that their distance from
+     each other along the arc is specified by "child-interval". The radius
+     of this circle is then rest length of the spring. "min-rest-length"
+     ensures that sparse menus don't collapse into too small.
+  */
+  child-interval: 70;
+  min-rest-length: 100;
+
+  /* Rest lengths are multiplied recursively with this factor. */
+  rest-length-multiplier: 1.4;
+
+  /* Determines whether the content is aligned to 90-degree angles */
+  snap-to-angles: true;
+
+  /* If dynamic layout is not used the text is shown below the spheres */
+  dynamic-text-layout: true;
+}
+
+FullScreenOperator {
+  animation-time: 0.5;
+  use-exit-buttons: true;
+  relative-size: 0.75 1.0;
+  use-background: true;
+  enabled: true;
+}
+
+ImageWidget.FullScreenBackground {
+  size: 100% 100%;
+  input-flags: input-keep-grabs;
+
+  background-color: rgba(0, 0, 0, 1.0);
+  background-image: "Images/fullscreen-bg-tile.png";
+  background-size: 8% auto;
+  background-repeat: round;
+  opacity: 0.90;
+}
+
+CESAsymmetricGlowContainer.FullScreen > .label {
+  display: none;
+}
+
+CESAsymmetricGlowContainer.FullScreen {
+  color: black !important;
+}
+
+CESAsymmetricGlowContainer.FullScreen Toolbar > ToggleButton.Lock {
+  display: none;
+}
+
+Button.ExitFullScreenButton {
+  input-flags: input-single-taps input-keep-grabs;
+  background-color: transparent;
+  size: 120px 120px;
+}
+
+Button.ExitFullScreenButton .Icon {
+  source: "Images/exit-fullscreen.png";
+  size: 100% 100%;
+}
+
+Button.ExitFullScreenButton:active .Icon {
+  source: "Images/exit-fullscreen-active.png";
+  size: 100% 100%;
+}
+
+
+/* How the widgets are snapped to angles.
+   Following parameters allows widgets to only snap one way.
+
+   Change numbers to match half of pi (or comment them out) to support
+   table setups.
+ */
+SnapToAngleOperator {
+  snap-angle: 6.283185307179586;
+  maximum-snap-angle: 6.283185307179586;
+}
+
+/* Options for drawing the menu-bubble itself */
+CESAsymmetricContentSphere {
+  /* Background color behind the icon */
+  sphere-background: white;
+  /* Inner border color of the bubble */
+  /* inner-border-color: rgba(15, 126, 175, 1); */
+  inner-border-color: white;
+  /* Outer border color of the bubble */
+  outer-border-color: white;
+  /* Color of the shadow */
+  /* shadow-color: rgba(10, 90, 116, 1); */
+  shadow-color: white;
+  /* Strength of the shadow*/
+  shadow-strength: 0.3;
+}
+
+/* Size of the menu item for root */
+CESAsymmetricGraphVisualizer#root {
+  width: 180;
+  height: 180;
+}
+
+/* Image that will be spinned around menu item when it gets focus. */
+.FocusSpinner {
+  background-color: #0000;
+  width: 150px;
+  height: 150px;
+  color: white;
+  image: "Images/focus-spinner.png";
+}
+
+/* Options for text widget that shows the caption below the menu image. */
+.NodeText {
+  width : 400px;
+  height : 25px;
+  background-color: #00000000;
+  color: #000f;
+  stroke-width: 20;
+  stroke: #ffff;  
+  font-size: 20px;
+}
+
+/* Options for the image widget that is placed behind the opened content. */
+CESAsymmetricGlowContainer {
+  border-width : 0;
+  background-color: transparent;
+  color: black;
+  source: "Images/glow-rect.png";
+  compressed-mipmaps: 0;
+  /* If true the content will rotate towards hands. */
+  rotate-towards-hands: false;
+  /* Size of the area outside the content widget that can be used to drag the container. 
+     Value in scene coordinates. */
+  edge: 25px;
+  input-operators: true !important;
+}
+
+/* Options of background widget's of content that can be sent by email. */
+CESAsymmetricGlowContainer.enriched {
+  color: white;
+  source: "Images/glow-rect.png";
+}
+
+/* Options for TextWidget that is placed to a child of sendable content's
+   background widget. */
+CESAsymmetricGlowContainer > .label {
+  background-color: transparent;
+  text: "Place Your Marker Below";
+  width: 100%;
+  font-size: 71px;
+  text-align: center;
+  glow: 0.2;
+  glow-color: #fff7;
+  stroke-width: 2px;
+  stroke: black;
+}
+
+/* Following contains style specifications for some of
+   the widget backgrounds. They override some options of
+   CESAsymmetricGlowContainer.
+*/
+.glow_BookWidget, .glow_BookWidget.enriched,
+.glow_ItemFlowWidget, .glow_ItemFlowWidget.enriched {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glow_InputVisualizerWidget {
+  image: "Images/glow-rect-inputvis.png";
+  background-color: transparent;
+  color: rgba(0,0,0, 0.9);
+  background-size: 100%;
+}

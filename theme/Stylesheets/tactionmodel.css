@@ -1,0 +1,106 @@
+TactionModel {
+  background-color: #777f;
+  input-flags: input-operators input-keep-grabs input-pass-to-children;
+  size: 960 540;
+  explosion-multiplier: 10;       /* Explosion range (0 = closed, multiplier = open) */
+  explosion-slider-range: 15 635;  /* Vertical range for explosion slider icon */
+  media-size: 900;                /* Size that media will be scaled to (resize-to-fit) */
+  media-timeout: 60;               /* Idle-time before spawned media items will disappear */
+  media-fadeout: 0.2;
+  enable-intro-animation: true; /* Do we include intro animation when model is opened*/
+}
+
+/* Settings for media that is spawned from 3d-model */
+.TactionModelMedia {
+  border-width: 3px;
+  border-style: solid;
+}
+
+TextWidget.TactionModelMedia {
+  background-color: #00000077 !important;
+  text-align:center;
+  stroke-width: 12px;
+  stroke: black;
+  size: 500 300 !important; /* force size, otherwise gets rescaled after spawning */
+}
+
+TactionModel > ModelViewer {
+/* Commented out since attributes only accept float attributes for now
+  use-native-resolution: false;
+*/
+  fbo-size: 3840 2160;
+  size: 100% 94%;
+  location: 0 6%;
+  input-flags: input-keep-grabs input-pass-to-children input-operators;
+}
+
+TactionModel > .PlaceHolder {
+  size: 100%;
+  location: 0 0;
+  source: "Images/3d-cube.png";
+  input-flags: input-none;
+}
+
+TactionModel > .Title
+{
+  width: 100%;
+  height: 6%;
+  font-size: 28px;
+  text-align: center;
+  text: "MultiTaction Cell 3D Model";
+  input-flags: input-none;
+  background: #1eb6ea;
+  color: black;
+  font-weight: bold;
+}
+
+TactionModel > ModelViewer {
+  camera-location: 0 0 -10;
+  camera-target: 0 0 0;
+  camera-aspect: 1.777;
+  camera-fov: 60;
+  camera-near: 1.0;
+  camera-far: 2000.0;
+}
+
+ModelViewer > .Label {
+  background-color: #1eb6ea;
+  color: black;
+  width: 110;
+  height: 35;
+  font-size: 20px;
+  text-align: center;
+  input-flags: input-single-taps;
+  border: 2px solid #0007;
+  font-weight: bold;
+}
+
+ModelViewer > .Scaler > .Label {
+  origin: 50% 0;
+  location: 50% 310px;
+  text: "Slide to open";
+  text-align: hcenter;
+  wrap-mode: word;
+  size: 110% 40%;
+  font-size: 32px;
+  input-flags: input-none;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
+}
+
+ModelViewer > .Scaler {
+  location: 40px 0;
+  input-motion-y: true !important;
+  scale: 0.5;
+  source: "Images/explo_slider.png";
+  extra-input-capture-radius: 15;
+}
+
+/* This controls the intro animation of TactionModel*/
+TactionModel IntroRotationAnimator {
+  /* How model is rotated around the y and x axis*/
+  animation-ranges: 1.3 0.2;
+  /* How long each of these rotations take time */
+  animation-times: 0.6 1;
+}

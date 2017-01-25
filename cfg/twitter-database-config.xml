@@ -1,0 +1,8 @@
+<!--
+    This file will point out the database that is used
+    for caching downloaded twitter-content.
+-->
+<DB>
+  <type>QSQLITE</type>
+  <databasename>/home/multi/Applications/ExperienceWithCollaboration2/twitter.db</databasename>
+</DB>

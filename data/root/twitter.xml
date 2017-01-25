@@ -1,0 +1,7 @@
+<!DOCTYPE mtdoc>
+<Styleable type="experience.TweetCloud">
+  <queries>
+    <string>multitaction</string>
+    <string>@multitouchfi</string>
+  </queries>
+</Styleable>

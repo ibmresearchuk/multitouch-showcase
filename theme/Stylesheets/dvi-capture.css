@@ -1,0 +1,8 @@
+DVICaptureWidget {
+  size: 1920px 1080px;
+}
+DVICaptureMonitor {
+  auto-toggle-module: true;
+  spawn-location: 500px 500px;
+  spawn-scale: 50%;
+}

@@ -1,0 +1,156 @@
+RegisterMarkerDialog {
+  message: 'Hello! Register your name and email to claim this marker.';
+  background-color: #0005;
+  size: 500px 300px;
+  edit-focus-color: #00ff;
+  edit-idle-color: #ffff;
+}
+
+RegisterMarkerDialog * {
+  input-flags: pass-to-children;
+}
+
+RegisterMarkerDialog .EditBox {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 3px;
+  wrap-mode: none;
+  overflow: hidden;
+  color: white;
+  input-flags: single-taps;
+}
+
+RegisterMarkerDialog .EditBox.Editing {
+  border: 2px solid #34b4e4ff;
+}
+
+RegisterMarkerDialog .EditBox.Error {
+  border: 1px solid red;
+}
+
+RegisterMarkerDialog #FormParent {
+  size: 100% 100%;
+  background-color: transparent;
+}
+
+RegisterMarkerDialog #MessageLabel {
+  size: 90% 45%;
+  location: 5% 5%;
+  background-color: transparent;
+  resize-to-content: true;
+}
+
+RegisterMarkerDialog #NameLabel {
+  size: 15% 20%;
+  location: 5% 35%;
+  text: 'Name';
+  background-color: transparent;
+  text-align: right;
+}
+
+RegisterMarkerDialog #NameEdit {
+  size: 65% 10%;
+  location: 25% 35%;
+}
+
+RegisterMarkerDialog #EmailLabel {
+  size: 15% 20%;
+  location: 5% 50%;
+  text: 'Email';
+  background-color: transparent;
+  text-align: right;
+}
+
+RegisterMarkerDialog #EmailEdit {
+  size: 65% 10%;
+  location: 25% 50%;
+  background-color: transparent;
+}
+
+RegisterMarkerDialog #MarkerLabel {
+  size: 90% 10%;
+  location: 5% 85%;
+  background-color: transparent;
+}
+
+RegisterMarkerDialog #FormError {
+  size: 90% 10%;
+  location: 5% 66%;
+  text-align: right;
+  color: white;
+  display: none;
+  background-color: transparent;
+}
+
+RegisterMarkerDialog #FormError.MissingFields {
+  text: 'Please provide both a name and a valid email.';
+  display: block;
+}
+
+RegisterMarkerDialog #FormError.InvalidEmail {
+  text: 'Please provide a valid email.';
+  display: block;
+}
+
+RegisterMarkerDialog .DialogButton {
+  size: 16% 8%;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+  input-flags: single-taps;
+  text-align: center;
+  wrap-mode: none;
+}
+
+RegisterMarkerDialog .DialogButton:active {
+  background-color: #555A;
+}
+
+RegisterMarkerDialog #SubmitButton {
+  text: 'Submit';
+  location: 79% 85%;
+}
+
+RegisterMarkerDialog #CancelButton {
+  text: 'Cancel';
+  location: 57% 85%;
+}
+
+RegisterMarkerDialog #ResultParent {
+  size: 100% 100%;
+  background-color: transparent;
+  display: none;
+}
+
+RegisterMarkerDialog #ResultMessage {
+  size: 90% 50%;
+  location: 5% 20%;
+  font-size: 17px;
+  background-color: transparent;
+  text-align: center;
+}
+
+RegisterMarkerDialog #ResultMessage.Busy {
+  text: 'Registering your marker...';
+}
+
+RegisterMarkerDialog #ResultMessage.Success {
+  text: 'You have successfully registered your own marker. Welcome to Multitouch.';
+}
+
+RegisterMarkerDialog #ResultMessage.DbConnectionError {
+  text: 'Could not connect to the database. Please try again later.';
+}
+
+RegisterMarkerDialog #ResultMessage.GenericDbError {
+  text: 'There was an error registering the marker. Please try again later.';
+}
+
+RegisterMarkerDialog #ResultMessage.DuplicateKeyError {
+  text: 'That marker is already registered. Please try a new one.';
+}
+
+RegisterMarkerDialog #ResultOk {
+  text: 'Ok';
+  location: 79% 85%;
+}

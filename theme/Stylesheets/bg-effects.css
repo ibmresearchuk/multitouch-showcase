@@ -1,0 +1,150 @@
+/* Options for the ImageWidget that is spawned every now and then. */
+ImageWidget.ImageAttractor {
+  source: "Images/MultiTaction.png";
+  background: transparent;
+  color: white;
+  scale: 0.8;
+}
+
+.Light ImageWidget.ImageAttractor {
+  color: black;
+}
+
+
+/* How often the image above will be spawned */
+ImageAttractorOperator {
+  /* How long (in seconds) the image will stay on the screen */
+  time: 12s;
+  /* How often (in seconds) new text will be spawned */
+  interval: 9s;
+
+  /* How long in relative time it takes to reach scale given in animation-scale */
+  relative-zoom-time-begin : 0.1;
+  /* When in relative time scale goes from animation-scale to scale of 1 */
+  relative-zoom-time-end : 0.99;
+  /* Scale used in zoom animation */
+  animation-scale: 0.9;
+  /* Spawn image regardless whether there is space or not */
+  force-spawn: true;
+  /* Spawn image only to corners of parent */
+  use-only-corners: true;
+}
+
+
+/* Options for the TextWidget that is spawned every now and then. */
+TextWidget.TextAttractor {
+  text: "Touch and hold";
+  resize-to-content: true;
+  wrap-mode: none;
+  background: transparent;
+  font-size: 50px;
+  glow: 0.3;
+  glow-color: #fff6;
+  stroke-width: 1px;
+  stroke: black;
+}
+
+/* How often the text above will be spawned */
+TextAttractorOperator {
+  /* How long (in seconds) the text will stay on the screen */
+  time: 7s;
+  /* How often (in seconds) new text will be spawned */
+  interval: 20s;
+
+  /* How long in relative time it takes to reach scale given in animation-scale */
+  relative-zoom-time-begin : 0.5;
+  /* When in relative time scale goes from animation-scale to scale of 1 */
+  relative-zoom-time-end : 0.5;
+  /* Scale used in zoom animation */
+  animation-scale: 0.9;
+  /* Spawn image only if there is empty space */
+  force-spawn: false;
+  /* Do not restrict into corners */
+  use-only-corners: false;
+}
+
+/* This controls the animation that is spawned before the
+   menu is opened. */
+GestureAnimationWidget {
+  /* Image that is used in circle drawn around hand */
+  image: "Images/loading-segment.png";
+  /* Color that will modulate the image above */
+  color: rgba(200, 0, 0, 0.7);
+}
+
+/**** Rest of the file contains different styles for background. See Javascript-folder for switching them *****/
+
+/* Settings for the dark shader effect. See documentation of Extensions::Effects::ShaderEffect */
+#DarkBackgroundShaderEffect {
+  /* Speed of the shader effect*/
+  speed: 0.05;
+  /* Is framebuffer cleared before rendering the next frame */
+  clear-framebuffer: false;
+  /* Framebuffer scale in relation about the widget (whole application)*/
+  framebuffer-scale: 0.5 0.5;
+  /* Shader running in the effect */
+  shader: "Shaders/awesome-pink.fs";
+  /* Depth for the shader widget */
+  depth: -5;
+  /* Let ShaderEffect always have input */
+  input-flags: input-include-everything-inside;
+}
+
+#NebulaBackgroundShaderEffect {
+  /* Speed of the shader effect*/
+  speed: 0.25;
+  /* Is framebuffer cleared before rendering the next frame */
+  clear-framebuffer: false;
+  /* Framebuffer scale in relation about the widget (whole application)*/
+  framebuffer-scale: 0.5 0.5;
+  /* Shader running in the effect */
+  shader: "Shaders/nebula.fs";
+  /* Depth for the shader widget */
+  depth: -5;
+  /* Let ShaderEffect always have input */
+  input-flags: input-include-everything-inside;
+}
+
+#NebulaSparkles {
+  size: 100% 100%;
+  input-flags: input-include-everything-inside;
+  background: transparent;
+  particles-per-finger: 1;
+  particles-per-frame: 100;
+  particle-color0: rgba(255, 168, 168, 0.75);
+  particle-color1: rgba(128, 128, 255, 0.50);
+  particle-color2: rgba(128, 0, 0, 0.0);
+  particle-size: 8;
+  particle-velocity-scale: 2.5;
+  motion-factor: 0.5;
+  particle-probability: 0.25;
+}
+
+/* Settings of the champagne. See documentation of Extensions::Effects::Champagne */
+#DarkBackgroundChampagne {
+  background-color: transparent;
+  color: white;
+  bubble-size: 6.0;
+  bubble-size-spread: 0.5;
+  bubble-momentum: 0.7;
+  bubbles-per-emitter: 5;
+  bubble-acceleration: -0.1;
+  bubble-sway: 0.02;
+  emitter-count: 30;
+  emitter-age: 40;
+  bubbles-per-finger: 1;
+  depth: -4;
+}
+
+BackgroundWallPaper {
+  background-color: #ff00ff11;
+  color: #77777777;
+  interaction-color: #13B5EAFF;
+  interaction-fade-duration: 10;
+  grid-size: 25;
+  grid-spacing: 1;
+  input-flags: input-include-everything-inside;
+  grab-flags: grabs-none;
+  lock-depth: true;
+  depth: -5;
+}

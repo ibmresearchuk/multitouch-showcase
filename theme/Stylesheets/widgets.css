@@ -1,0 +1,63 @@
+/* Settings for videos. */
+VideoWidget {
+
+  /* Disable audio panning by default. This breaks things in Canvus since it
+     uses ViewWidgets. We also don't include audio config anymore by default
+     because of this. Several people launch Canvus from Experience but very few use
+     audio panning. */
+  pan-audio: false;
+}
+
+/* Settings for item flows */
+ItemFlowWidget {
+  background-color: transparent;
+  spacing: 40;
+  separation: 0.78;
+}
+
+/* Settings for input visualizer */
+InputVisualizerWidget {
+  hand-text-color: white;
+  marker-text-color: white;
+  pen-text-color: white;
+  grabs-hands: true;
+}
+
+/* Settings for input visualizer */
+.Light InputVisualizerWidget {
+  hand-text-color: black;
+  marker-text-color: black;
+  pen-text-color: black;
+  grabs-hands: true;
+}
+
+/* Settings for web browser */
+BrowserWidget {
+  display-frame: false;
+}
+
+/* Settings for paint widget */
+DrawCaptureWidget {
+  /* Special values: all      all markers are erasers */
+  /*                 none     erasing is disabled     */
+  /* Or just list of marker codes, example:           */
+  /*                 42, 1000, 12345                  */
+  eraser-codes: all;
+  finger-line-width: 8px;
+  pen-line-width: 6px;
+}
+
+#sign {
+  size: 100% 10%;
+  loop: true;
+  input-flags: input-none;
+  lock-depth: true;
+  source: "iWallVideo.mov";
+  auto-start: true;
+}
+
+/* Open popups in Experience in the same window. This is different behavior
+ * from Canvus. */
+CESAsymmetricMainWidget BrowserWidgetCef {
+  popups-in-same-window: true;
+}

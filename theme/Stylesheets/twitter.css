@@ -1,0 +1,93 @@
+/* Settings for the cloud of tweets. This is inherited from CloudWidget
+   so the attribtes are same as in Extensions::CloudWidget
+ */
+TweetCloud {
+  detached-return-velocity: 2000;
+  background: transparent;
+  detached-timeout: 5s;
+  scale: 60%;
+  item-scale: 4.5;
+  size: 1000px 1000px;
+  /* Align cloud to the middle of background glow*/
+  location: 0.5 0.5;
+  origin: 0.5 0.5;
+  /* List of query strings for tweets. In order being able to have separate
+     tweet queries for different instances, this is usually placed in the 
+     serialized widget (the xml-file) */
+  /* queries: "multitaction" "@multitactionfi"; */
+}
+
+TweetCloud > Button.Close .Icon {
+  source: "Images/close-button.png";
+  size: 100% 100%;
+  input-flags: input-none;
+}
+
+.Light TweetCloud > Button.Close .Icon {
+  color: black;
+}
+
+TweetCloud > Button.Close {
+  size: 15% 15%;
+  background-color: transparent;
+  location: 107% -27%;
+  input-motion: false;
+}
+
+/* Different image for close is used when it is pressed down */
+TweetCloud > Button.Close:active .Icon {
+  source: "Images/close-button-ring-active.png";
+}
+
+.Light TweetCloud > Button.Close:active .Icon {
+  source: "Images/close-button-ring-active.png";
+}
+
+.CloudGlow {
+  source: "Images/cloud-ring.png";
+  color: white;
+  size: 1000px 1000px;
+  depth: 10;
+  lock-depth: true;
+}
+
+.Light .CloudGlow {
+  color: black;
+}
+
+/* Settings of widgets showing tweets */
+TweetWidget {
+  border: 5px solid black;
+  size: 400px 300px;
+  background-color: white;
+}
+
+/* Settings of ImageWidget that holds profile image in tweets */
+TweetWidget .ProfileImage {
+  location: 40px 30px;
+}
+
+/* Settings for DocumentWidget that holds profile names in tweets */
+TweetWidget .ProfileNames {
+  location: 150px 30px;
+  width: 230px;
+  height: 90px;
+  background: transparent;
+}
+
+/* Settings for Documentwidget that holds content of tweets*/
+TweetWidget .Content {
+  background: transparent;
+  location: 40px 125px;
+  width: 340px;
+  height: 140px;
+}
+
+/* Settings of TextWidget that holds date of tweet */
+TweetWidget .Date {
+  color: #333;
+  background: transparent;
+  width: 340px;
+  location: 40px 265px;
+  font-size: 14px;
+}
