@@ -1,0 +1,5 @@
+<!DOCTYPE mtdoc>
+<Styleable type="WebBrowserCef.BrowserWidget">
+    <source>https://ets.mybluemix.net/catalogue/demos/placemaking</source>
+    <size>1920 1080</size>
+</Styleable>

@@ -1,0 +1,5 @@
+<!DOCTYPE mtdoc>
+<Styleable type="WebBrowserCef.BrowserWidget">
+    <source>http://www.bbc.co.uk/news/uk-england-38406995</source>
+    <size>1920 1080</size>
+</Styleable>
