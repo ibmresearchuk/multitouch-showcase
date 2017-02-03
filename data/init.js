@@ -1,7 +1,8 @@
 var mainWidget = $("CESAsymmetricMainWidget")[0];
 
 replacements = ["root", "",
-                "twitter", "IBM on Twitter"
+                "twitter", "IBM on Twitter",
+                "1000", "FHE"
                ];
 
 var data = new Radiant.BinaryData();
