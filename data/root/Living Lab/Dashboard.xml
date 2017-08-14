@@ -1,0 +1,5 @@
+<!DOCTYPE mtdoc>
+<Styleable type="WebBrowserCef.BrowserWidget">
+    <source>http://iot-living-lab.eu-gb.mybluemix.net/</source>
+    <size>1920 1080</size>
+</Styleable>

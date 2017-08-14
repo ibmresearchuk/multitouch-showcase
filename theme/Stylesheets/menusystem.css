@@ -32,13 +32,13 @@ CESAsymmetricGraphVisualizer {
   image: "Images/glow.png";
 
   /* Apply spherical distortion to bubble icon? */
-  spherical-effect: true;
+  spherical-effect: false;
 
   /* How many seconds bubble stays if it is never touched. */
   initial-timeout: 15.0;
 
   /* How many seconds bubble stays after it has been interacted with */
-  timeout: 30.0;
+  timeout: 300.0;
 
   /* How far away spawned neighbours are placed from the bubble (in pixels) */
   spawn-distance: 150.0;
@@ -48,7 +48,7 @@ CESAsymmetricGraphVisualizer {
   height: 143;
 
   /* How many seconds content must stay idle until it's removed. */
-  content-timeout: 60.0;
+  content-timeout: 600.0;
 
   /* The width of the connector between menu bubbles */
   connector-width: 30.0;

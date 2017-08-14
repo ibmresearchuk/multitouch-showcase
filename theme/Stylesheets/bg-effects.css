@@ -23,7 +23,7 @@ ImageWidget.ImageAttractor {
 
 ImageAttractorOperator {
     /* How long (in seconds) the image will stay on the screen */
-    time: 10s;
+    time: 10000000s;
     /* How often (in seconds) new text will be spawned */
     interval: 9s;
     /* How long in relative time it takes to reach scale given in animation-scale */
@@ -46,10 +46,10 @@ TextWidget.TextAttractor {
     resize-to-content: true;
     wrap-mode: none;
     background: transparent;
-    font-size: 50px;
+    font-size: 70px;
     glow: 0.3;
     glow-color: #fff6;
-    stroke-width: 1px;
+    stroke-width: 3px;
     stroke: black;
 }
 
@@ -58,15 +58,15 @@ TextWidget.TextAttractor {
 
 TextAttractorOperator {
     /* How long (in seconds) the text will stay on the screen */
-    time: 7s;
+    time: 10s;
     /* How often (in seconds) new text will be spawned */
-    interval: 20s;
+    interval: 2s;
     /* How long in relative time it takes to reach scale given in animation-scale */
     relative-zoom-time-begin: 0.5;
     /* When in relative time scale goes from animation-scale to scale of 1 */
     relative-zoom-time-end: 0.5;
     /* Scale used in zoom animation */
-    animation-scale: 0.9;
+    animation-scale: 1;
     /* Spawn image only if there is empty space */
     force-spawn: false;
     /* Do not restrict into corners */

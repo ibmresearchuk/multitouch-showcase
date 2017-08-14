@@ -5,7 +5,7 @@ TactionModel {
   explosion-multiplier: 10;       /* Explosion range (0 = closed, multiplier = open) */
   explosion-slider-range: 15 635;  /* Vertical range for explosion slider icon */
   media-size: 900;                /* Size that media will be scaled to (resize-to-fit) */
-  media-timeout: 60;               /* Idle-time before spawned media items will disappear */
+  media-timeout: 600;               /* Idle-time before spawned media items will disappear */
   media-fadeout: 0.2;
   enable-intro-animation: true; /* Do we include intro animation when model is opened*/
 }
