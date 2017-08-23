@@ -23,7 +23,7 @@ ImageWidget.ImageAttractor {
 
 ImageAttractorOperator {
     /* How long (in seconds) the image will stay on the screen */
-    time: 10000000s;
+    time: 100s;
     /* How often (in seconds) new text will be spawned */
     interval: 9s;
     /* How long in relative time it takes to reach scale given in animation-scale */
@@ -60,7 +60,7 @@ TextAttractorOperator {
     /* How long (in seconds) the text will stay on the screen */
     time: 10s;
     /* How often (in seconds) new text will be spawned */
-    interval: 2s;
+    interval: 12s;
     /* How long in relative time it takes to reach scale given in animation-scale */
     relative-zoom-time-begin: 0.5;
     /* When in relative time scale goes from animation-scale to scale of 1 */
